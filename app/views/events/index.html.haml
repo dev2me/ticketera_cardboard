@@ -1,0 +1,35 @@
+%h1 Listing events
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Date
+      %th Hour
+      %th Cupo
+      %th Type
+      %th Price
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @events.each do |event|
+      %tr
+        %td= event.name
+        %td= event.date
+        %td= event.hour
+        %td= event.cupo
+        %td= event.type
+        %td= event.price
+        %td= event.user
+        %td= link_to 'Show', event
+        %td= link_to 'Edit', edit_event_path(event)
+        %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+- if can? :manage, @event
+  = link_to 'New Event', new_event_path
+  
