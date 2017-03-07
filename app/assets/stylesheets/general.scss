@@ -5,3 +5,12 @@
 // Import Materialize 
 
 @import 'materialize';
+
+select {
+  display: block!important;
+  width: 50%;
+  height: auto;
+}
+.text-center {
+  text-align: center;
+}

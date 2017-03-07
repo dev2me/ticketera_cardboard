@@ -19,12 +19,12 @@
     = f.label :cupo
     = f.check_box :cupo
   .field
-    = f.label :type
-    = f.text_field :type
+    = f.label :type_event
+    = f.text_field :type_event
   .field
     = f.label :price
     = f.text_field :price
   .field
-    = select :user, :name, {include_blank: true}
+    = f.text_field :user_id
   .actions
     = f.submit 'Save'

@@ -5,7 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.datetime :date
       t.time :hour
       t.boolean :cupo
-      t.string :type
+      t.string :type_event
       t.string :price
       t.references :user, foreign_key: true
 

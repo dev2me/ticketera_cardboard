@@ -1,4 +1,4 @@
-%h1 Listing events
+%h1.text-center Eventos disponibles
 
 %table
   %thead
@@ -21,9 +21,9 @@
         %td= event.date
         %td= event.hour
         %td= event.cupo
-        %td= event.type
+        %td= event.type_event
         %td= event.price
-        %td= event.user
+        %td= event.user.email
         %td= link_to 'Show', event
         %td= link_to 'Edit', edit_event_path(event)
         %td= link_to 'Destroy', event, :method => :delete, :data => { :confirm => 'Are you sure?' }
@@ -32,4 +32,6 @@
 
 - if can? :manage, @event
   = link_to 'New Event', new_event_path
-  
+
+= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete
+
